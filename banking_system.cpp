@@ -46,8 +46,3 @@ void check_balance(){
     } 
 }
 
-
-int main(){
-    cout << "hello world!";
-
-}
