@@ -31,3 +31,23 @@ void create_account()
 
 }
 
+void check_balance(){ 
+    if(name == ""){ 
+        return; 
+    } 
+    else{ 
+        cout << "\nACCOUNT DETAILS\n"; 
+        cout << "==================================="; 
+        cout <<"\nUsername: "<<name; 
+        cout << "\nAccount number: "<< account_number; 
+        cout <<"\nPIN number: "<<pin; 
+        cout << "\nCurrent balance: $"<< balance <<endl; 
+        cout << "==================================="; 
+    } 
+}
+
+
+int main(){
+    cout << "hello world!";
+
+}
