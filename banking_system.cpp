@@ -83,3 +83,39 @@ bool validation(){
         return; 
     } 
 }
+
+int main(){ 
+    cout << "WELCOME TO BANKING SYSTEM"; 
+    cout << "1.Create account"; 
+    cout << "2.Check account details"; 
+    cout << "3.Deposite"; 
+    cout << "4.Withdraw"; 
+    cout << "5.Exit"; 
+    while (true){ 
+        int option; 
+        cout << "Enter an option number: "; 
+        cin >> option; 
+        if(option == 1){ 
+            create_account(); 
+        } 
+        else if(option == 2){ 
+            validation(); 
+            check_balance(); 
+        } 
+        else if(option == 3){ 
+            validation(); 
+            deposit(); 
+        } 
+        else if(option == 4){ 
+            validation(); 
+            withdraw(); 
+        } 
+        else if(option == 5){ 
+            cout << "Thank you for using our Banking system"; 
+            break; 
+        } 
+        else{ 
+            cout << "Invalid option number entered!"; 
+        } 
+    } 
+}
