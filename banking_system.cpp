@@ -62,3 +62,24 @@ double withdraw(){
     return balance; 
 }
 
+bool validation(){ 
+    long long acc; 
+    int PIN; 
+    cout << "Enter your account number: "; 
+    cin >> acc; 
+    if(acc == account_number){ 
+        cout << "Enter your PIN number: "; 
+        cin >> PIN; 
+        if(PIN == pin){ 
+            return true; 
+        } 
+        else{ 
+            cout << "Incorrect PIN number"; 
+            return; 
+        } 
+    } 
+    else{ 
+        cout << "Incorrect account number"; 
+        return; 
+    } 
+}
