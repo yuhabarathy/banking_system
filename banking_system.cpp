@@ -20,7 +20,7 @@ void create_account()
     else{
          srand(time(0));
         account_number = rand() % 900000000000LL + 100000000000LL;
-        pin = rand()%10000 + 99999;
+        pin = rand()%100000 + 99999;
         cout << "\nACCOUNT CREATED SUCCESSFULLY!\n";
         cout <<"\nUsername: "<<name;
         cout << "\nAccount number: "<< account_number;
@@ -50,6 +50,11 @@ double deposit(){
     double amount; 
     cout << "Enter amount to be deposited: $"; 
     cin>>amount; 
+    if(amount <= 0){
+        cout << "Invalid deposit amount.";
+        return balance;
+    }
+
     balance += amount; 
     return balance; 
 } 
@@ -58,6 +63,15 @@ double withdraw(){
     double amount; 
     cout << "Enter amount to be withdraw: $"; 
     cin>>amount; 
+    if(amount <= 0){
+        cout << "Invalid withdrawal amount.\n";
+        return balance;
+    }
+    if(amount > balance){
+        cout << "Insufficient balance.\n";
+        return balance;
+    }
+
     balance -= amount; 
     return balance; 
 }
@@ -65,22 +79,29 @@ double withdraw(){
 bool validation(){ 
     long long acc; 
     int PIN; 
+    if(name == ""){
+        cout << "No account created yet!";
+        return false;
+    }
+
     cout << "Enter your account number: "; 
     cin >> acc; 
+
     if(acc == account_number){ 
         cout << "Enter your PIN number: "; 
         cin >> PIN; 
+
         if(PIN == pin){ 
             return true; 
         } 
         else{ 
             cout << "Incorrect PIN number"; 
-            return; 
+            return false; 
         } 
     } 
     else{ 
         cout << "Incorrect account number"; 
-        return; 
+        return false; 
     } 
 }
 
