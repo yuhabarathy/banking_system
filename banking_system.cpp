@@ -46,3 +46,18 @@ void check_balance(){
     } 
 }
 
+double deposit(){ 
+    double amount; 
+    cout << "Enter amount to be deposited: $"; 
+    cin>>amount; 
+    balance += amount; 
+    return balance; 
+} 
+
+double withdraw(){ 
+    double amount; 
+    cout << "Enter amount to be withdraw: $"; 
+    cin>>amount; 
+    balance -= amount; 
+    return balance; 
+}
